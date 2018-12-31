@@ -1,22 +1,21 @@
 <mat-card>
   <form (submit)=onAddPost(postForm) #postForm = "ngForm">
     <mat-form-field>
-      <textarea
-      matInput rows="5" cols="10"
-      name="title"
+      <input matInput type="text" name="title"
       ngModel
-      #title="ngModel"
-      required>
-      <mat-error *ngIf="title.invalid">Please enter a valid Post></mat-error>
-      </textarea>
+      required
+      placeholder="Give a Title For Your Food"
+      #title="ngModel">
+      <mat-error *ngIf="title.invalid">{{'Please Enter Your Title!'}}</mat-error>
     </mat-form-field>
     <mat-form-field>
       <textarea
       matInput rows="5" cols="10"
       name="content" ngModel
       required
+      placeholder="Enter The Descripton About your Food Item."
       #content="ngModel"></textarea>
-      <mat-error *ngIf="content.invalid">Please enter a valid Post></mat-error>
+      <mat-error *ngIf="content.invalid">Please enter a valid Post</mat-error>
     </mat-form-field>
     <button
     mat-raised-button
