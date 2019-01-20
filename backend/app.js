@@ -7,12 +7,12 @@ const postsRoutes = require('./routes/posts');
 
 mongoose
 .connect(
-  "mongodb+srv://offers:12345mamun@cluster0-dsp9y.mongodb.net/test?retryWrites=true")
+  "mongodb://thowoo:QYVCB63OhOAwdw9C@fooddatabase-shard-00-00-d4jrv.mongodb.net:27017,fooddatabase-shard-00-01-d4jrv.mongodb.net:27017,fooddatabase-shard-00-02-d4jrv.mongodb.net:27017/test?ssl=true&replicaSet=foodDatabase-shard-0&authSource=admin&retryWrites=true", { useNewUrlParser: true })
   .then(() => {
     console.log('Connnect to the datanase');
   })
-  .catch(() => {
-    console.log('Connection failed');
+  .catch((e) => {
+    console.log('Connection failed', e);
   });
 
 const app = express();
